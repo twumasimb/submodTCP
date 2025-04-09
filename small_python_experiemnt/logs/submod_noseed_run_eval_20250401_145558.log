@@ -1,0 +1,38 @@
+2025-04-01 14:55:58,449 - test_prioritization - INFO - Logging initialized for experiment: submod
+2025-04-01 14:55:58,449 - test_prioritization - INFO - Command line arguments: {'test_dir': '../tests', 'method': 'submod', 'output': None, 'failure_history': '../test_results.json', 'seed': None, 'evaluate': True, 'source_dir': '../v1', 'run': True, 'log_level': 'INFO'}
+2025-04-01 14:55:58,449 - test_prioritization - INFO - ===== Test Prioritization Experiment Started =====
+2025-04-01 14:55:58,449 - test_prioritization - INFO - Current working directory: /home/twumasimb/Research/submodTCP/small_python_experiemnt/prioritization
+2025-04-01 14:55:58,449 - test_prioritization - INFO - Test directory: /home/twumasimb/Research/submodTCP/small_python_experiemnt/tests
+2025-04-01 14:55:58,449 - test_prioritization - INFO - Retrieving and analyzing test files...
+2025-04-01 14:55:58,454 - test_prioritization - INFO - Found 12 tests
+2025-04-01 14:55:58,454 - test_prioritization - INFO - Loading UnixCoder model for code embeddings...
+2025-04-01 14:56:04,868 - test_prioritization - INFO - Successfully loaded UnixCoder model and tokenizer to cuda
+2025-04-01 14:56:04,869 - test_prioritization - INFO - Analyzing source file: /home/twumasimb/Research/submodTCP/small_python_experiemnt/v1/calculator.py
+2025-04-01 14:56:04,873 - test_prioritization - INFO - Found 20 functions in source code
+2025-04-01 14:56:05,512 - test_prioritization - INFO - Generated embeddings for 20 source functions
+2025-04-01 14:56:05,684 - test_prioritization - INFO - Generated embeddings for 12 test cases
+2025-04-01 14:56:05,684 - test_prioritization - INFO - Running submodular optimization...
+2025-04-01 14:56:05,722 - test_prioritization - INFO - Selected 10/12 tests
+2025-04-01 14:56:05,725 - test_prioritization - INFO - Submodular optimization complete in 0.04 seconds
+2025-04-01 14:56:05,725 - test_prioritization - INFO - First 5 selected tests:
+2025-04-01 14:56:05,726 - test_prioritization - INFO -   1. TestCalculator::test_divide
+2025-04-01 14:56:05,726 - test_prioritization - INFO -   2. TestCalculator::test_square_root
+2025-04-01 14:56:05,726 - test_prioritization - INFO -   3. TestCalculator::test_combined_operations
+2025-04-01 14:56:05,726 - test_prioritization - INFO -   4. TestCalculator::test_average
+2025-04-01 14:56:05,726 - test_prioritization - INFO -   5. TestCalculator::test_gcd
+2025-04-01 14:56:05,731 - test_prioritization - INFO - Prioritized Test Order:
+2025-04-01 14:56:05,732 - test_prioritization - INFO - ------------------------------------------------------------
+2025-04-01 14:56:05,732 - test_prioritization - INFO - 1. TestCalculator::test_divide
+2025-04-01 14:56:05,732 - test_prioritization - INFO - 2. TestCalculator::test_square_root
+2025-04-01 14:56:05,732 - test_prioritization - INFO - 3. TestCalculator::test_combined_operations
+2025-04-01 14:56:05,732 - test_prioritization - INFO - 4. TestCalculator::test_average
+2025-04-01 14:56:05,732 - test_prioritization - INFO - 5. TestCalculator::test_gcd
+2025-04-01 14:56:05,732 - test_prioritization - INFO - 6. TestCalculator::test_factorial
+2025-04-01 14:56:05,732 - test_prioritization - INFO - 7. TestCalculator::test_subtract
+2025-04-01 14:56:05,732 - test_prioritization - INFO - 8. TestCalculator::test_add
+2025-04-01 14:56:05,732 - test_prioritization - INFO - 9. TestCalculator::test_absolute
+2025-04-01 14:56:05,732 - test_prioritization - INFO - 10. TestCalculator::test_modulus
+2025-04-01 14:56:05,732 - test_prioritization - INFO - 11. TestCalculator::test_multiply
+2025-04-01 14:56:05,732 - test_prioritization - INFO - 12. TestCalculator::test_power
+2025-04-01 14:56:05,733 - test_prioritization - INFO - ------------------------------------------------------------
+2025-04-01 14:56:05,733 - test_prioritization - INFO - Creating test file: prioritized_tests.py

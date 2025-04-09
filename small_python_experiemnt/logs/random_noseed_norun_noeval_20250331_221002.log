@@ -1,0 +1,28 @@
+2025-03-31 22:10:02,681 - test_prioritization - INFO - Logging initialized for experiment: random
+2025-03-31 22:10:02,681 - test_prioritization - INFO - Command line arguments: {'test_dir': '../tests', 'method': 'random', 'output': 'prioritized_tests.json', 'failure_history': '../test_results.json', 'seed': None, 'evaluate': False, 'source_dir': '../v1', 'run': False, 'log_level': 'INFO'}
+2025-03-31 22:10:02,681 - test_prioritization - INFO - ===== Test Prioritization Experiment Started =====
+2025-03-31 22:10:02,681 - test_prioritization - INFO - Current working directory: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+2025-03-31 22:10:02,681 - test_prioritization - INFO - Test directory: /home/twumasimb/Research/submodTCP/small_python_experiemnt/tests
+2025-03-31 22:10:02,681 - test_prioritization - INFO - Retrieving and analyzing test files...
+2025-03-31 22:10:02,688 - test_prioritization - INFO - Found 13 tests
+2025-03-31 22:10:02,688 - test_prioritization - INFO - Starting random prioritization
+2025-03-31 22:10:02,688 - test_prioritization - INFO - Random prioritization complete. Shuffled 13 tests
+2025-03-31 22:10:02,688 - test_prioritization - INFO - Prioritized Test Order:
+2025-03-31 22:10:02,688 - test_prioritization - INFO - ------------------------------------------------------------
+2025-03-31 22:10:02,688 - test_prioritization - INFO - 1. TestCalculator::test_subtract
+2025-03-31 22:10:02,688 - test_prioritization - INFO - 2. TestCalculator::test_factorial
+2025-03-31 22:10:02,688 - test_prioritization - INFO - 3. TestCalculator::test_v1_features
+2025-03-31 22:10:02,688 - test_prioritization - INFO - 4. TestCalculator::test_add
+2025-03-31 22:10:02,688 - test_prioritization - INFO - 5. TestCalculator::test_power
+2025-03-31 22:10:02,688 - test_prioritization - INFO - 6. TestCalculator::test_divide
+2025-03-31 22:10:02,688 - test_prioritization - INFO - 7. TestCalculator::test_absolute
+2025-03-31 22:10:02,688 - test_prioritization - INFO - 8. TestCalculator::test_modulus
+2025-03-31 22:10:02,689 - test_prioritization - INFO - 9. TestCalculator::test_square_root
+2025-03-31 22:10:02,689 - test_prioritization - INFO - 10. TestCalculator::test_combined_operations
+2025-03-31 22:10:02,689 - test_prioritization - INFO - 11. TestCalculator::test_multiply
+2025-03-31 22:10:02,689 - test_prioritization - INFO - 12. TestCalculator::test_average
+2025-03-31 22:10:02,689 - test_prioritization - INFO - 13. TestCalculator::test_gcd
+2025-03-31 22:10:02,689 - test_prioritization - INFO - ------------------------------------------------------------
+2025-03-31 22:10:02,689 - test_prioritization - INFO - Saving prioritized test order to prioritized_tests.json
+2025-03-31 22:10:02,689 - test_prioritization - INFO - Prioritized test order saved successfully
+2025-03-31 22:10:02,689 - test_prioritization - INFO - ===== Test Prioritization Experiment Completed =====

@@ -1,0 +1,13 @@
+2025-04-01 20:01:55,880 - test_prioritization - INFO - Logging initialized for experiment: random
+2025-04-01 20:01:55,880 - test_prioritization - INFO - Command line arguments: {'test_dir': '../tests', 'method': 'random', 'failure_history': '../test_results.json', 'seed': None, 'source_dir': '../v1', 'bash_output': 'run_prioritized_tests.sh', 'log_level': 'INFO', 'run': False, 'evaluate': False}
+2025-04-01 20:01:55,881 - test_prioritization - INFO - ===== Bash Script Generator Started =====
+2025-04-01 20:01:55,881 - test_prioritization - INFO - Current working directory: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+2025-04-01 20:01:55,881 - test_prioritization - INFO - Test directory: /home/twumasimb/Research/submodTCP/small_python_experiemnt/tests
+2025-04-01 20:01:55,881 - test_prioritization - INFO - Retrieving and analyzing test files...
+2025-04-01 20:01:55,904 - test_prioritization - INFO - Found 12 tests
+2025-04-01 20:01:55,906 - test_prioritization - INFO - Starting random prioritization
+2025-04-01 20:01:55,906 - test_prioritization - INFO - Random prioritization complete. Shuffled 12 tests
+2025-04-01 20:01:55,906 - test_prioritization - INFO - Creating bash script: run_prioritized_tests.sh
+2025-04-01 20:01:55,907 - test_prioritization - INFO - Bash script run_prioritized_tests.sh created successfully and made executable.
+2025-04-01 20:01:55,907 - test_prioritization - INFO - To run tests in prioritized order, execute: bash run_prioritized_tests.sh
+2025-04-01 20:01:55,907 - test_prioritization - INFO - ===== Bash Script Generator Completed =====

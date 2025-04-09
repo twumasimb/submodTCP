@@ -1,0 +1,65 @@
+2025-04-01 14:57:42,953 - test_prioritization - INFO - Logging initialized for experiment: submod
+2025-04-01 14:57:42,954 - test_prioritization - INFO - Command line arguments: {'test_dir': '../tests', 'method': 'submod', 'output': None, 'failure_history': '../test_results.json', 'seed': None, 'evaluate': True, 'source_dir': '../v1', 'run': True, 'log_level': 'INFO'}
+2025-04-01 14:57:42,954 - test_prioritization - INFO - ===== Test Prioritization Experiment Started =====
+2025-04-01 14:57:42,954 - test_prioritization - INFO - Current working directory: /home/twumasimb/Research/submodTCP/small_python_experiemnt/prioritization
+2025-04-01 14:57:42,954 - test_prioritization - INFO - Test directory: /home/twumasimb/Research/submodTCP/small_python_experiemnt/tests
+2025-04-01 14:57:42,954 - test_prioritization - INFO - Retrieving and analyzing test files...
+2025-04-01 14:57:42,959 - test_prioritization - INFO - Found 12 tests
+2025-04-01 14:57:42,959 - test_prioritization - INFO - Loading UnixCoder model for code embeddings...
+2025-04-01 14:57:47,939 - test_prioritization - INFO - Successfully loaded UnixCoder model and tokenizer to cuda
+2025-04-01 14:57:47,939 - test_prioritization - INFO - Analyzing source file: /home/twumasimb/Research/submodTCP/small_python_experiemnt/v1/calculator.py
+2025-04-01 14:57:47,943 - test_prioritization - INFO - Found 20 functions in source code
+2025-04-01 14:57:48,690 - test_prioritization - INFO - Generated embeddings for 20 source functions
+2025-04-01 14:57:48,851 - test_prioritization - INFO - Generated embeddings for 12 test cases
+2025-04-01 14:57:48,851 - test_prioritization - INFO - Running submodular optimization...
+2025-04-01 14:57:48,886 - test_prioritization - INFO - Selected 10/12 tests
+2025-04-01 14:57:48,889 - test_prioritization - INFO - Submodular optimization complete in 0.04 seconds
+2025-04-01 14:57:48,889 - test_prioritization - INFO - First 5 selected tests:
+2025-04-01 14:57:48,889 - test_prioritization - INFO -   1. TestCalculator::test_divide
+2025-04-01 14:57:48,889 - test_prioritization - INFO -   2. TestCalculator::test_square_root
+2025-04-01 14:57:48,889 - test_prioritization - INFO -   3. TestCalculator::test_combined_operations
+2025-04-01 14:57:48,890 - test_prioritization - INFO -   4. TestCalculator::test_average
+2025-04-01 14:57:48,890 - test_prioritization - INFO -   5. TestCalculator::test_gcd
+2025-04-01 14:57:48,895 - test_prioritization - INFO - Prioritized Test Order:
+2025-04-01 14:57:48,895 - test_prioritization - INFO - ------------------------------------------------------------
+2025-04-01 14:57:48,895 - test_prioritization - INFO - 1. TestCalculator::test_divide
+2025-04-01 14:57:48,895 - test_prioritization - INFO - 2. TestCalculator::test_square_root
+2025-04-01 14:57:48,895 - test_prioritization - INFO - 3. TestCalculator::test_combined_operations
+2025-04-01 14:57:48,895 - test_prioritization - INFO - 4. TestCalculator::test_average
+2025-04-01 14:57:48,896 - test_prioritization - INFO - 5. TestCalculator::test_gcd
+2025-04-01 14:57:48,896 - test_prioritization - INFO - 6. TestCalculator::test_factorial
+2025-04-01 14:57:48,896 - test_prioritization - INFO - 7. TestCalculator::test_subtract
+2025-04-01 14:57:48,896 - test_prioritization - INFO - 8. TestCalculator::test_add
+2025-04-01 14:57:48,896 - test_prioritization - INFO - 9. TestCalculator::test_absolute
+2025-04-01 14:57:48,896 - test_prioritization - INFO - 10. TestCalculator::test_modulus
+2025-04-01 14:57:48,896 - test_prioritization - INFO - 11. TestCalculator::test_multiply
+2025-04-01 14:57:48,896 - test_prioritization - INFO - 12. TestCalculator::test_power
+2025-04-01 14:57:48,896 - test_prioritization - INFO - ------------------------------------------------------------
+2025-04-01 14:57:48,896 - test_prioritization - INFO - Creating test file: prioritized_tests.py
+2025-04-01 14:57:48,896 - test_prioritization - INFO - Test file prioritized_tests.py created successfully.
+2025-04-01 14:57:48,896 - test_prioritization - INFO - Running tests in prioritized_tests.py with pytest...
+2025-04-01 14:57:49,054 - test_prioritization - ERROR - Tests failed. Check the report at test_report.html
+2025-04-01 14:57:49,054 - test_prioritization - INFO - Evaluating fault detection efficiency for submod
+2025-04-01 14:57:52,995 - test_prioritization - INFO - 
+Fault Detection Results for submod:
+2025-04-01 14:57:52,995 - test_prioritization - INFO - ------------------------------------------------------------
+2025-04-01 14:57:52,995 - test_prioritization - INFO - Total tests: 12
+2025-04-01 14:57:52,995 - test_prioritization - INFO - Total faults: 12
+2025-04-01 14:57:52,995 - test_prioritization - INFO - APFD score: 0.5000
+2025-04-01 14:57:52,995 - test_prioritization - INFO - Average fault detection position: 6.50
+2025-04-01 14:57:52,996 - test_prioritization - INFO - Percentage of tests needed to find all faults: 100.00%
+2025-04-01 14:57:52,996 - test_prioritization - INFO - Faults found at positions:
+2025-04-01 14:57:52,996 - test_prioritization - INFO -   unknown_fault_0: Test #1
+2025-04-01 14:57:52,996 - test_prioritization - INFO -   unknown_fault_1: Test #2
+2025-04-01 14:57:52,996 - test_prioritization - INFO -   unknown_fault_2: Test #3
+2025-04-01 14:57:52,996 - test_prioritization - INFO -   unknown_fault_3: Test #4
+2025-04-01 14:57:52,996 - test_prioritization - INFO -   unknown_fault_4: Test #5
+2025-04-01 14:57:52,996 - test_prioritization - INFO -   unknown_fault_5: Test #6
+2025-04-01 14:57:52,996 - test_prioritization - INFO -   unknown_fault_6: Test #7
+2025-04-01 14:57:52,996 - test_prioritization - INFO -   unknown_fault_7: Test #8
+2025-04-01 14:57:52,996 - test_prioritization - INFO -   unknown_fault_8: Test #9
+2025-04-01 14:57:52,996 - test_prioritization - INFO -   unknown_fault_9: Test #10
+2025-04-01 14:57:52,996 - test_prioritization - INFO -   unknown_fault_10: Test #11
+2025-04-01 14:57:52,996 - test_prioritization - INFO -   unknown_fault_11: Test #12
+2025-04-01 14:57:52,996 - test_prioritization - INFO - ------------------------------------------------------------
+2025-04-01 14:57:52,996 - test_prioritization - INFO - ===== Test Prioritization Experiment Completed =====

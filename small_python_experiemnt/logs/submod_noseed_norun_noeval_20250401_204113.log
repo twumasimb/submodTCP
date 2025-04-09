@@ -1,0 +1,9 @@
+2025-04-01 20:41:13,105 - test_prioritization - INFO - Logging initialized for experiment: submod
+2025-04-01 20:41:13,105 - test_prioritization - INFO - Command line arguments: {'test_dir': '../tests', 'method': 'submod', 'failure_history': '../test_results.json', 'seed': None, 'source_dir': '../v1', 'bash_output': 'submod_method.sh', 'log_level': 'INFO', 'run': False, 'evaluate': False}
+2025-04-01 20:41:13,106 - test_prioritization - INFO - ===== Bash Script Generator Started =====
+2025-04-01 20:41:13,106 - test_prioritization - INFO - Current working directory: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+2025-04-01 20:41:13,106 - test_prioritization - INFO - Test directory: /home/twumasimb/Research/submodTCP/small_python_experiemnt/tests
+2025-04-01 20:41:13,106 - test_prioritization - INFO - Retrieving and analyzing test files...
+2025-04-01 20:41:13,112 - test_prioritization - INFO - Found 12 tests
+2025-04-01 20:41:13,112 - test_prioritization - INFO - Loading UnixCoder model for code embeddings...
+2025-04-01 20:41:20,347 - test_prioritization - INFO - Successfully loaded UnixCoder model and tokenizer to cuda
