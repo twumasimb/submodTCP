@@ -8,7 +8,7 @@ import random
 import numpy as np
 from tqdm.auto import tqdm
 from transformers import AutoTokenizer, AutoModel
-from utils import extract_source_functions, generate_embedding
+from prioritization.utils import extract_source_functions, generate_embedding
 
 
 def random_prioritization(tests, logger=None):

@@ -1,9 +1,9 @@
 # tests/test_calculator.py
 
-import pytest
-import sys
 import os
+import sys
 import math
+import pytest
 
 # We'll use a fixture to switch between v0 and v1 calculator
 @pytest.fixture(params=["v0", "v1"])

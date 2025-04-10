@@ -1,0 +1,12 @@
+2025-04-09 13:02:08,993 - apfd_random - INFO - Logger initialized for: apfd_random
+2025-04-09 13:02:08,993 - apfd_random - INFO - Processing test output file: test_submod_output.txt
+2025-04-09 13:02:08,993 - apfd_random - INFO - Parsing test output...
+2025-04-09 13:02:08,996 - apfd_random - INFO - Parsed 12 test results
+2025-04-09 13:02:08,996 - apfd_random - INFO - Calculating APFD metrics...
+2025-04-09 13:02:08,997 - apfd_random - INFO - APFD score: 0.8750
+2025-04-09 13:02:08,997 - apfd_random - INFO - Average fault detection position: 2.00
+2025-04-09 13:02:08,997 - apfd_random - INFO - Percentage of tests needed to find all faults: 25.00%
+2025-04-09 13:02:08,998 - apfd_random - INFO - Generating summary report for method: random
+2025-04-09 13:02:08,998 - apfd_random - INFO - Summary report saved to ./test_submod_output_apfd_summary.md
+2025-04-09 13:02:08,998 - apfd_random - INFO - Creating fault detection plot for method: random
+2025-04-09 13:02:09,784 - apfd_random - INFO - Fault detection plot saved to ./test_submod_output_apfd_plot.png

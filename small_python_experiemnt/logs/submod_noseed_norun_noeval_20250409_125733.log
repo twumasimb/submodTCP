@@ -1,0 +1,28 @@
+2025-04-09 12:57:33,754 - test_prioritization - INFO - Logging initialized for experiment: submod
+2025-04-09 12:57:33,755 - test_prioritization - INFO - Command line arguments: {'test_dir': '../tests', 'method': 'submod', 'failure_history': '../test_results.json', 'seed': None, 'source_dir': 'v1', 'bash_output': 'run_prioritized_tests.sh', 'log_level': 'INFO', 'run': False, 'evaluate': False}
+2025-04-09 12:57:33,755 - test_prioritization - INFO - ===== Bash Script Generator Started =====
+2025-04-09 12:57:33,755 - test_prioritization - INFO - Current working directory: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+2025-04-09 12:57:33,755 - test_prioritization - INFO - Test directory: /home/twumasimb/Research/submodTCP/small_python_experiemnt/tests
+2025-04-09 12:57:33,755 - test_prioritization - INFO - Retrieving and analyzing test files...
+2025-04-09 12:57:33,762 - test_prioritization - INFO - Found 12 tests
+2025-04-09 12:57:33,762 - test_prioritization - INFO - Loading UnixCoder model for code embeddings...
+2025-04-09 12:57:41,482 - test_prioritization - INFO - Successfully loaded UnixCoder model and tokenizer to cuda
+2025-04-09 12:57:41,483 - test_prioritization - INFO - Analyzing source file: /home/twumasimb/Research/submodTCP/small_python_experiemnt/v1/calculator.py
+2025-04-09 12:57:41,695 - test_prioritization - INFO - Found 20 functions in source code
+2025-04-09 12:57:42,530 - test_prioritization - INFO - Generated embeddings for 20 source functions
+2025-04-09 12:57:42,736 - test_prioritization - INFO - Generated embeddings for 12 test cases
+2025-04-09 12:57:42,736 - test_prioritization - INFO - Running submodular optimization...
+2025-04-09 12:57:42,775 - test_prioritization - INFO - Selected 10/12 tests
+2025-04-09 12:57:42,779 - test_prioritization - INFO - Submodular optimization complete in 0.04 seconds
+2025-04-09 12:57:42,779 - test_prioritization - INFO - First 5 selected tests:
+2025-04-09 12:57:42,779 - test_prioritization - INFO -   1. TestCalculator::test_divide
+2025-04-09 12:57:42,779 - test_prioritization - INFO -   2. TestCalculator::test_square_root
+2025-04-09 12:57:42,779 - test_prioritization - INFO -   3. TestCalculator::test_combined_operations
+2025-04-09 12:57:42,779 - test_prioritization - INFO -   4. TestCalculator::test_average
+2025-04-09 12:57:42,779 - test_prioritization - INFO -   5. TestCalculator::test_gcd
+2025-04-09 12:57:42,786 - test_prioritization - INFO - Calculating APFD and other fault detection metrics...
+2025-04-09 12:57:47,274 - test_prioritization - INFO - APFD Score: 0.5000
+2025-04-09 12:57:47,275 - test_prioritization - INFO - Creating bash script: run_prioritized_tests.sh
+2025-04-09 12:57:47,278 - test_prioritization - INFO - Bash script run_prioritized_tests.sh created successfully and made executable.
+2025-04-09 12:57:47,278 - test_prioritization - INFO - To run tests in prioritized order, execute: bash run_prioritized_tests.sh
+2025-04-09 12:57:47,278 - test_prioritization - INFO - ===== Bash Script Generator Completed =====

@@ -1,0 +1,287 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.2, pytest-8.3.5, pluggy-1.5.0 -- /home/twumasimb/miniconda3/envs/torch/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.2', 'Platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.5.0'}, 'Plugins': {'html': '4.1.1', 'anyio': '4.8.0', 'metadata': '3.1.1'}}
+rootdir: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+plugins: html-4.1.1, anyio-4.8.0, metadata-3.1.1
+collecting ... collected 2 items / 1 deselected / 1 selected
+
+tests/test_calculator.py::TestCalculator::test_divide[v1] FAILED         [100%]
+
+=================================== FAILURES ===================================
+________________________ TestCalculator.test_divide[v1] ________________________
+
+self = <test_calculator.TestCalculator object at 0x7fec4f179bb0>
+calculator = <v1.calculator.Calculator object at 0x7fec4fd5d670>
+
+    def test_divide(self, calculator):
+        assert calculator.divide(6, 3) == 2
+        assert calculator.divide(5, 2) == 2.5
+        assert calculator.divide(-6, 3) == -2
+        assert calculator.divide(-6, -3) == 2
+        assert calculator.divide(0, 5) == 0
+    
+        # Test division by zero exception
+        with pytest.raises(ValueError):
+>           calculator.divide(5, 0)
+
+tests/test_calculator.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <v1.calculator.Calculator object at 0x7fec4fd5d670>, a = 5, b = 0
+
+    def divide(self, a, b):
+        # ERROR 2: Missing zero division check
+        # Division by zero check has been removed causing potential crash
+>       return a / b  # ERROR: Missing zero division check
+E       ZeroDivisionError: division by zero
+
+v1/calculator.py:26: ZeroDivisionError
+=========================== short test summary info ============================
+FAILED tests/test_calculator.py::TestCalculator::test_divide[v1] - ZeroDivisi...
+======================= 1 failed, 1 deselected in 0.04s ========================
+============================= test session starts ==============================
+platform linux -- Python 3.12.2, pytest-8.3.5, pluggy-1.5.0 -- /home/twumasimb/miniconda3/envs/torch/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.2', 'Platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.5.0'}, 'Plugins': {'html': '4.1.1', 'anyio': '4.8.0', 'metadata': '3.1.1'}}
+rootdir: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+plugins: html-4.1.1, anyio-4.8.0, metadata-3.1.1
+collecting ... collected 2 items / 1 deselected / 1 selected
+
+tests/test_calculator.py::TestCalculator::test_square_root[v1] FAILED    [100%]
+
+=================================== FAILURES ===================================
+_____________________ TestCalculator.test_square_root[v1] ______________________
+
+self = <test_calculator.TestCalculator object at 0x7f98f8945e50>
+calculator = <v1.calculator.Calculator object at 0x7f98f8946d80>
+
+    def test_square_root(self, calculator):
+>       assert calculator.square_root(4) == 2
+E       assert 1.9972293322020578 == 2
+E        +  where 1.9972293322020578 = square_root(4)
+E        +    where square_root = <v1.calculator.Calculator object at 0x7f98f8946d80>.square_root
+
+tests/test_calculator.py:63: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_calculator.py::TestCalculator::test_square_root[v1] - asser...
+======================= 1 failed, 1 deselected in 0.03s ========================
+============================= test session starts ==============================
+platform linux -- Python 3.12.2, pytest-8.3.5, pluggy-1.5.0 -- /home/twumasimb/miniconda3/envs/torch/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.2', 'Platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.5.0'}, 'Plugins': {'html': '4.1.1', 'anyio': '4.8.0', 'metadata': '3.1.1'}}
+rootdir: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+plugins: html-4.1.1, anyio-4.8.0, metadata-3.1.1
+collecting ... collected 2 items / 1 deselected / 1 selected
+
+tests/test_calculator.py::TestCalculator::test_combined_operations[v1] FAILED [100%]
+
+=================================== FAILURES ===================================
+_________________ TestCalculator.test_combined_operations[v1] __________________
+
+self = <test_calculator.TestCalculator object at 0x7f5052c3f140>
+calculator = <v1.calculator.Calculator object at 0x7f5052c3f5f0>
+
+    def test_combined_operations(self, calculator):
+        # Test combining add, multiply, and divide
+        result = calculator.divide(calculator.multiply(calculator.add(3, 4), 2), 4)
+        assert result == 3.5
+    
+        # Test combining subtract, power and absolute
+        result = calculator.absolute(calculator.power(calculator.subtract(3, 5), 2))
+        assert result == 4
+    
+        # Test combining factorial and square_root
+        result = calculator.square_root(calculator.factorial(4))
+>       assert pytest.approx(result, 0.0001) == 4.898979485566356
+E       assert 4.883434978770462 ± 4.9e-04 == 4.898979485566356
+E         
+E         comparison failed
+E         Obtained: 4.898979485566356
+E         Expected: 4.883434978770462 ± 4.9e-04
+
+tests/test_calculator.py:133: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_calculator.py::TestCalculator::test_combined_operations[v1]
+======================= 1 failed, 1 deselected in 0.04s ========================
+============================= test session starts ==============================
+platform linux -- Python 3.12.2, pytest-8.3.5, pluggy-1.5.0 -- /home/twumasimb/miniconda3/envs/torch/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.2', 'Platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.5.0'}, 'Plugins': {'html': '4.1.1', 'anyio': '4.8.0', 'metadata': '3.1.1'}}
+rootdir: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+plugins: html-4.1.1, anyio-4.8.0, metadata-3.1.1
+collecting ... collected 2 items / 1 deselected / 1 selected
+
+tests/test_calculator.py::TestCalculator::test_average[v1] PASSED        [100%]
+
+======================= 1 passed, 1 deselected in 0.02s ========================
+============================= test session starts ==============================
+platform linux -- Python 3.12.2, pytest-8.3.5, pluggy-1.5.0 -- /home/twumasimb/miniconda3/envs/torch/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.2', 'Platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.5.0'}, 'Plugins': {'html': '4.1.1', 'anyio': '4.8.0', 'metadata': '3.1.1'}}
+rootdir: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+plugins: html-4.1.1, anyio-4.8.0, metadata-3.1.1
+collecting ... collected 2 items / 1 deselected / 1 selected
+
+tests/test_calculator.py::TestCalculator::test_gcd[v1] FAILED            [100%]
+
+=================================== FAILURES ===================================
+_________________________ TestCalculator.test_gcd[v1] __________________________
+
+self = <test_calculator.TestCalculator object at 0x7fc46c4b26f0>
+calculator = <v1.calculator.Calculator object at 0x7fc46c4b3050>
+
+    def test_gcd(self, calculator):
+        assert calculator.gcd(48, 18) == 6
+        assert calculator.gcd(0, 5) == 5
+        assert calculator.gcd(5, 0) == 5
+        assert calculator.gcd(-48, 18) == 6
+>       assert calculator.gcd(48, -18) == 6
+E       assert -6 == 6
+E        +  where -6 = gcd(48, -18)
+E        +    where gcd = <v1.calculator.Calculator object at 0x7fc46c4b3050>.gcd
+
+tests/test_calculator.py:105: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_calculator.py::TestCalculator::test_gcd[v1] - assert -6 == 6
+======================= 1 failed, 1 deselected in 0.04s ========================
+============================= test session starts ==============================
+platform linux -- Python 3.12.2, pytest-8.3.5, pluggy-1.5.0 -- /home/twumasimb/miniconda3/envs/torch/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.2', 'Platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.5.0'}, 'Plugins': {'html': '4.1.1', 'anyio': '4.8.0', 'metadata': '3.1.1'}}
+rootdir: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+plugins: html-4.1.1, anyio-4.8.0, metadata-3.1.1
+collecting ... collected 2 items / 1 deselected / 1 selected
+
+tests/test_calculator.py::TestCalculator::test_factorial[v1] FAILED      [100%]
+
+=================================== FAILURES ===================================
+______________________ TestCalculator.test_factorial[v1] _______________________
+
+self = <test_calculator.TestCalculator object at 0x7fc973a4e120>
+calculator = <v1.calculator.Calculator object at 0x7fc973a4f4a0>
+
+    def test_factorial(self, calculator):
+>       assert calculator.factorial(0) == 1
+E       assert 0 == 1
+E        +  where 0 = factorial(0)
+E        +    where factorial = <v1.calculator.Calculator object at 0x7fc973a4f4a0>.factorial
+
+tests/test_calculator.py:73: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_calculator.py::TestCalculator::test_factorial[v1] - assert ...
+======================= 1 failed, 1 deselected in 0.03s ========================
+============================= test session starts ==============================
+platform linux -- Python 3.12.2, pytest-8.3.5, pluggy-1.5.0 -- /home/twumasimb/miniconda3/envs/torch/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.2', 'Platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.5.0'}, 'Plugins': {'html': '4.1.1', 'anyio': '4.8.0', 'metadata': '3.1.1'}}
+rootdir: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+plugins: html-4.1.1, anyio-4.8.0, metadata-3.1.1
+collecting ... collected 2 items / 1 deselected / 1 selected
+
+tests/test_calculator.py::TestCalculator::test_subtract[v1] PASSED       [100%]
+
+======================= 1 passed, 1 deselected in 0.02s ========================
+============================= test session starts ==============================
+platform linux -- Python 3.12.2, pytest-8.3.5, pluggy-1.5.0 -- /home/twumasimb/miniconda3/envs/torch/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.2', 'Platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.5.0'}, 'Plugins': {'html': '4.1.1', 'anyio': '4.8.0', 'metadata': '3.1.1'}}
+rootdir: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+plugins: html-4.1.1, anyio-4.8.0, metadata-3.1.1
+collecting ... collected 2 items / 1 deselected / 1 selected
+
+tests/test_calculator.py::TestCalculator::test_add[v1] PASSED            [100%]
+
+======================= 1 passed, 1 deselected in 0.02s ========================
+============================= test session starts ==============================
+platform linux -- Python 3.12.2, pytest-8.3.5, pluggy-1.5.0 -- /home/twumasimb/miniconda3/envs/torch/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.2', 'Platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.5.0'}, 'Plugins': {'html': '4.1.1', 'anyio': '4.8.0', 'metadata': '3.1.1'}}
+rootdir: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+plugins: html-4.1.1, anyio-4.8.0, metadata-3.1.1
+collecting ... collected 2 items / 1 deselected / 1 selected
+
+tests/test_calculator.py::TestCalculator::test_absolute[v1] PASSED       [100%]
+
+======================= 1 passed, 1 deselected in 0.02s ========================
+============================= test session starts ==============================
+platform linux -- Python 3.12.2, pytest-8.3.5, pluggy-1.5.0 -- /home/twumasimb/miniconda3/envs/torch/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.2', 'Platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.5.0'}, 'Plugins': {'html': '4.1.1', 'anyio': '4.8.0', 'metadata': '3.1.1'}}
+rootdir: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+plugins: html-4.1.1, anyio-4.8.0, metadata-3.1.1
+collecting ... collected 2 items / 1 deselected / 1 selected
+
+tests/test_calculator.py::TestCalculator::test_modulus[v1] FAILED        [100%]
+
+=================================== FAILURES ===================================
+_______________________ TestCalculator.test_modulus[v1] ________________________
+
+self = <test_calculator.TestCalculator object at 0x7f0c2d8f2e70>
+calculator = <v1.calculator.Calculator object at 0x7f0c2d8f3d10>
+
+    def test_modulus(self, calculator):
+        assert calculator.modulus(10, 3) == 1
+        assert calculator.modulus(10, 2) == 0
+        assert calculator.modulus(-10, 3) == 2
+        assert calculator.modulus(5.5, 2) == 1.5
+    
+        # Test modulus by zero exception
+        with pytest.raises(ValueError):
+>           calculator.modulus(5, 0)
+
+tests/test_calculator.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <v1.calculator.Calculator object at 0x7f0c2d8f3d10>, a = 5, b = 0
+
+    def modulus(self, a, b):
+        # ERROR: Missing zero check
+>       return a % b  # ERROR: Should check if b is zero
+E       ZeroDivisionError: integer modulo by zero
+
+v1/calculator.py:58: ZeroDivisionError
+=========================== short test summary info ============================
+FAILED tests/test_calculator.py::TestCalculator::test_modulus[v1] - ZeroDivis...
+======================= 1 failed, 1 deselected in 0.03s ========================
+============================= test session starts ==============================
+platform linux -- Python 3.12.2, pytest-8.3.5, pluggy-1.5.0 -- /home/twumasimb/miniconda3/envs/torch/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.2', 'Platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.5.0'}, 'Plugins': {'html': '4.1.1', 'anyio': '4.8.0', 'metadata': '3.1.1'}}
+rootdir: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+plugins: html-4.1.1, anyio-4.8.0, metadata-3.1.1
+collecting ... collected 2 items / 1 deselected / 1 selected
+
+tests/test_calculator.py::TestCalculator::test_multiply[v1] PASSED       [100%]
+
+======================= 1 passed, 1 deselected in 0.02s ========================
+============================= test session starts ==============================
+platform linux -- Python 3.12.2, pytest-8.3.5, pluggy-1.5.0 -- /home/twumasimb/miniconda3/envs/torch/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.2', 'Platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.5.0'}, 'Plugins': {'html': '4.1.1', 'anyio': '4.8.0', 'metadata': '3.1.1'}}
+rootdir: /home/twumasimb/Research/submodTCP/small_python_experiemnt
+plugins: html-4.1.1, anyio-4.8.0, metadata-3.1.1
+collecting ... collected 2 items / 1 deselected / 1 selected
+
+tests/test_calculator.py::TestCalculator::test_power[v1] FAILED          [100%]
+
+=================================== FAILURES ===================================
+________________________ TestCalculator.test_power[v1] _________________________
+
+self = <test_calculator.TestCalculator object at 0x7fd76a94ddf0>
+calculator = <v1.calculator.Calculator object at 0x7fd76a94eff0>
+
+    def test_power(self, calculator):
+        assert calculator.power(2, 3) == 8
+        assert calculator.power(2, 0) == 1
+        assert calculator.power(0, 5) == 0
+        assert calculator.power(5, 1) == 5
+>       assert calculator.power(2, -1) == 0.5
+E       assert 0 == 0.5
+E        +  where 0 = power(2, -1)
+E        +    where power = <v1.calculator.Calculator object at 0x7fd76a94eff0>.power
+
+tests/test_calculator.py:60: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_calculator.py::TestCalculator::test_power[v1] - assert 0 ==...
+======================= 1 failed, 1 deselected in 0.04s ========================
